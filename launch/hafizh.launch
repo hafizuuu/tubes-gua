@@ -1,0 +1,5 @@
+<launch>
+<!-- pkg: nama package, type: nama file, name: nama node -->
+    <node pkg = 'hafizh_pkg' type = 'hafizh_pub.py' name = 'node_pub' output = 'screen'>
+    <node pkg = 'hafizh_pkg' type = 'hafizh_sub.py' name = 'node_sub' output = 'screen'>
+</launch>
