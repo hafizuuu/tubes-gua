@@ -13,10 +13,10 @@ class ATM:
     def login(self, deteksi_warna_benda):
         if deteksi_warna_benda == 'Segitiga Biru': 
             self.parameter_log_in = True
-            print("=== Selamat Anda Berhasil Login! ===")
+            print("\n=== Selamat Anda Berhasil Login! ===")
             self.menu_transaksi()
         else:
-            print("Login gagal! Bentuk atau warna tidak sesuai.")
+            print("\nLogin gagal! Bentuk atau warna tidak sesuai.\n")
             self.parameter_log_in = False
 
     def menu_transaksi(self):
@@ -33,8 +33,12 @@ class ATM:
                 self.transfer()
             elif menu == '2':
                 self.cek_saldo()
+            elif menu == '3':
+                self.tarik_tunai()
+            elif menu == '4':
+                self.bayar_tagihan()
             else:
-                print("Menu yang Anda pilih tidak tersedia.")
+                print("\nMenu yang Anda pilih tidak tersedia.\n")
         else:
             print("Login diperlukan terlebih dahulu.")
 
@@ -55,7 +59,7 @@ class ATM:
                 print(f"Saldo yang Anda miliki saat ini: Rp {self.saldo}")
                 self.publish_transaction_status(True)
         except ValueError:
-            print("Masukkan jumlah yang valid!")
+            print("Masukkan jumlah yang valid!\n")
 
     def cek_saldo(self):
         if not self.parameter_log_in:
